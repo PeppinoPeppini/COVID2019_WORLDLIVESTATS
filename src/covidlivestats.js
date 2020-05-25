@@ -5,11 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import Columns from "react-columns";
 import Form from "react-bootstrap/Form";
+import ReactGA from "react-ga";
 function App() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] =useState([])
   const [searchCountries, setSearchCountries]=useState("");
   useEffect(() => {
+    ReactGA.initialize('UA-167569797-1');
+    ReactGA.pageview('/');
     axios 
     .all([
     axios.get("https://corona.lmao.ninja/v2/all"),
