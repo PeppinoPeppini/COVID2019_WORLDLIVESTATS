@@ -12,7 +12,7 @@ function App() {
   const [searchCountries, setSearchCountries]=useState("");
   useEffect(() => {
     ReactGA.initialize('UA-167569797-1');
-    ReactGA.pageview('/');
+    ReactGA.pageview('window.location.pathname + window.location.search');
     axios 
     .all([
     axios.get("https://corona.lmao.ninja/v2/all"),
